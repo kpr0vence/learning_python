@@ -20,14 +20,14 @@ path = Path('pi_digits_longer.txt')
 contents = path.read_text().strip()
 
 # Ask for birthday in 3/3/2004 format
-birthday = input("Please enter your birthday in the format dd/mm or dd/mm/yyyy.\nPlease do not enter any leading zeroes. ex. 3/3 or 10/7/1999: ")
+birthday = input("Please enter your birthday in the format dd/mm or dd/mm/yy.\nPlease do not enter any leading zeroes unless it is for the year. ex. 3/3 or 10/7/09: ")
 
 # Clear the '/' and then search for it
 birthday = re.sub(r"/", "", birthday)
-print(f"Input birthday: {birthday}")
+#print(f"Input birthday: {birthday}")
 
 result = re.search(birthday, contents)
-print(result)
+#print(result)
 if (result):
     digit_start = format_number(result.start())
     print(f"There was a match! Your birthday starts at the {digit_start} digit of pi! Printing from there...")
